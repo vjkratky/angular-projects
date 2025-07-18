@@ -52,7 +52,7 @@
         </button>
       </div>
 
-      <div class="box" *if="getPassword()">
+      <div class="box" *ngIf="getPassword()">
         <label
           >Your Password
           <input class="input" [value]="getPassword()" />
