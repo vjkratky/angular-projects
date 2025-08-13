@@ -1,0 +1,8 @@
+@for (post of posts; track post.title) {
+  <app-card
+    [title]="post.title"
+    [imageUrl]="post.imageUrl"
+    [userName]="post.userName"
+    [content]="post.content"
+  ></app-card>
+}

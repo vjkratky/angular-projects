@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "password-generator": {
+    "cards": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,10 +11,8 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:g",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/password-generator",
-            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -35,7 +33,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1000kB",
+                  "maximumWarning": "500kB",
                   "maximumError": "1MB"
                 },
                 {
@@ -58,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "password-generator:build:production"
+              "buildTarget": "cards:build:production"
             },
             "development": {
-              "buildTarget": "password-generator:build:development"
+              "buildTarget": "cards:build:development"
             }
           },
           "defaultConfiguration": "development"
