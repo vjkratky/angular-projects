@@ -32,6 +32,12 @@ export class App {
       imageUrl: "biking.jpeg",
       userName: "@biking122",
       content: "I done some biking today"
+    },
+    {
+      title: "Snowy Mountain",
+      imageUrl: "mountain.jpeg",
+      userName: "@mountainlover",
+      content: "Here is a picture of a snowy mountain"
     }
   ]
 }
