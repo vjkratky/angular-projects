@@ -1,0 +1,92 @@
+<div class="container">
+  <h3>Payment Form</h3>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label"> Payee Name</label>
+      <input type="text" class="form-control" (input)="onNameChange($event)" />
+    </div>
+
+    <div class="col">
+      <label class="form-label"><b>Name</b></label>
+      <div class="form-control-plaintext">{{ name | titlecase }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label"> Payment Date</label>
+      <input type="date" class="form-control" (input)="onDateChange($event)" />
+    </div>
+
+    <div class="col">
+      <label class="form-label"><b>Date</b></label>
+      <div class="form-control-plaintext">{{ date | date : "longDate" }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label"> Payment Amount</label>
+      <input
+        class="form-control"
+        type="text"
+        inputmode="decimal"
+        [formControl]="amount"
+        (input)="onAmountChange($event)"
+        (keypress)="validateNumber($event)"
+      />
+    </div>
+
+    <div class="col">
+      <label class="form-label"><b>Amount</b></label>
+      <div class="form-control-plaintext">
+        {{ amount.value | currency : "BRL" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label"> Height</label>
+      <input
+        type="text"
+        class="form-control"
+        (input)="onHeightChange($event)"
+        (keypress)="validateNumber($event)"
+      />
+    </div>
+
+    <div class="col">
+      <label class="form-label"><b>Height</b></label>
+      @if(height > 0) {
+      <div class="form-control-plaintext">
+        {{ height | number : "1.1-2" }}
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label"> Miles</label>
+      <input
+        type="text"
+        class="form-control"
+        (input)="onMilesChange($event)"
+        (keypress)="validateNumber($event)"
+      />
+    </div>
+
+    <div class="col">
+      <label class="form-label"><b>Kilometers</b></label>
+      @if((miles | convert: 'km') > 10) {
+      <div class="form-control-plaintext">
+        {{ miles | convert : "km" | number : "1.0-2" }}
+      </div>
+      }
+    </div>
+  </div>
+
+  {{ car | json }}
+</div>
