@@ -1,0 +1,23 @@
+<div class="ui styled fluid accordion">
+  @for(item of items; track $index; let i = $index) {
+  <div
+    class="title"
+    [ngClass]="{ active: i === openedItemIndex }"
+    (click)="changeOpenedIndex(i)"
+  >
+    <i class="dropdown icon"></i>
+    {{ item["title"] }}
+  </div>
+  <div
+    class="content"
+    [ngClass]="{ active: i === openedItemIndex }"
+    [@expandCollapse]="i === openedItemIndex ? 'expanded' : 'collapsed'"
+  >
+    @if(i === openedItemIndex){
+    <p @fadeInText>
+      {{ item["content"] }}
+    </p>
+    }
+  </div>
+  }
+</div>

@@ -1,0 +1,24 @@
+<table class="table is-striped mt-4">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Word Count</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of searchedResults; track $index) {
+      <tr>
+        <td>
+          <a
+            target="_blank"
+            [href]="'https://en.wikipedia.org?curid=' + row.pageid"
+            >{{ row.title }}</a
+          >
+        </td>
+        <td>{{ row.wordcount }}</td>
+        <td [innerHTML]="row.snippet"></td>
+      </tr>
+    }
+  </tbody>
+</table>

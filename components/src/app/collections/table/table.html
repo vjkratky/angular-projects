@@ -1,0 +1,20 @@
+<table class="ui table" [ngClass]="classNames">
+  <thead>
+    <tr>
+      @for(header of headers; track $index) {
+      <th>{{ header.label }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for(record of data; track $index) {
+    <tr>
+      @for(header of headers; track $index) {
+
+      <td>{{ record[header.key] }}</td>
+
+      }
+    </tr>
+    }
+  </tbody>
+</table>
