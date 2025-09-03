@@ -1,0 +1,42 @@
+<div class="columns">
+  <div class="column">
+    <app-card-display
+      [cardNumber]="cardNumber.value"
+      [name]="name.value"
+      [expiration]="expiration.value"
+    ></app-card-display>
+  </div>
+  <div class="column">
+    <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
+      <app-inputs label="Card Number" [control]="cardNumber"></app-inputs>
+      <app-inputs label="Name" [control]="name"></app-inputs>
+      <div class="columns">
+        <div class="column">
+          <app-inputs label="Expiration" [control]="expiration"></app-inputs>
+        </div>
+        <div class="column">
+          <app-inputs
+            label="Security Code"
+            [control]="securityCode"
+          ></app-inputs>
+        </div>
+      </div>
+      <div class="buttons">
+        <button
+          [disabled]="creditCardForm.invalid"
+          class="button is-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          class="button is-warning"
+          type="button"
+          (click)="onResetClick()"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="field">
+  <label class="label">{{ label }}</label>
+  <div class="control">
+    <!-- <input mask="(000)-000-0000" -->
+    <input
+      class="input"
+      [ngClass]="{
+        'is-danger': showErrors()
+      }"
+      [formControl]="control"
+    />
+  </div>
+  @if(showErrors()) { @if(errors['required']){
+  <div class="help is-danger">Value is required</div>
+  } @if(errors['minlength']) {
+  <div class="help is-danger">
+    Value you entered is
+    {{ errors["minlength"].actualLength }} characters long, but it must be at
+    least {{ errors["minlength"].requiredLength }} characters
+  </div>
+  } @if(errors['maxlength']) {
+  <div class="help is-danger">
+    Value you entered is
+    {{ errors["maxlength"].actualLength }} characters long, but it cannot be
+    longer than {{ errors["maxlength"].requiredLength }} characters
+  </div>
+  } @if(errors['pattern']) {
+  <div class="help is-danger">Format is invalid</div>
+  }}
+</div>
