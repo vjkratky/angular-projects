@@ -1,0 +1,16 @@
+@if(secondsForSolution === 0){
+<form [formGroup]="mathForm">
+  <div class="equation">{{ a }} + {{ b }} =</div>
+  <input formControlName="answer" />
+</form>
+} @else {
+<h1 class="title has-text-centered">
+  Congratulations! You took {{ secondsForSolution | number : "1.0-0" }} seconds
+  to complete the challenge
+</h1>
+} @if(secondsForSolutionAverage > 0){
+<div class="stats">
+  Average time for each answer:
+  {{ secondsForSolutionAverage | number : "1.0-3" }} seconds
+</div>
+}
