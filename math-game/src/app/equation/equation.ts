@@ -2,11 +2,12 @@ import { DecimalPipe, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { delay, filter, scan } from 'rxjs';
+import { AnswerHighlight } from '../answer-highlight';
 import { MathValidators } from './math-validators';
 
 @Component({
   selector: 'app-equation',
-  imports: [ReactiveFormsModule, JsonPipe, DecimalPipe],
+  imports: [ReactiveFormsModule, JsonPipe, DecimalPipe, AnswerHighlight],
   templateUrl: './equation.html',
   styleUrl: './equation.css',
 })

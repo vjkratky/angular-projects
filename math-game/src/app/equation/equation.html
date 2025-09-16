@@ -1,7 +1,7 @@
 @if(secondsForSolution === 0){
 <form [formGroup]="mathForm">
   <div class="equation">{{ a }} + {{ b }} =</div>
-  <input formControlName="answer" />
+  <input appAnswerHighlight formControlName="answer" />
 </form>
 } @else {
 <h1 class="title has-text-centered">

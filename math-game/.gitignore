@@ -46,3 +46,4 @@ yarn-error.log*
 # Optional: OS-specific files
 ehthumbs.db
 Icon?
+.vercel
