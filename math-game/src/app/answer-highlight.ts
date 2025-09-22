@@ -18,10 +18,8 @@ export class AnswerHighlight {
       .subscribe((value) => {
         console.log(value);
         if (value < 0.2) {
-          console.log('close');
           this.el.nativeElement.classList.add('close');
         } else {
-          console.log('not');
           this.el.nativeElement.classList.remove('close');
         }
       });
